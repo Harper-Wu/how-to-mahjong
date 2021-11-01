@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if form %}
+        <form action="{{ url_for('checkAnswer') }}" method="post" style="text-align:left">
+            {{ form.hidden_tag() }}
+            {% for item in form.data %}
+                <P>
+                    <label for="choices{{ item["id"] }}">{{ item["id"] }}. {{ item["question"] }}</label>
+                </P>
+                {% if item["img"] is not none and item["img"]!= ""%}
+                    <img src="{{ url_for('static', filename=item["img"]) }}" alt="" height="66">
+                    <ul id="choices{{ item["id"] }}">
+                        <li><input id ="{{ item["id"] }}-0" class="auto-save"name="{{ item["id"] }}" type="radio" value="A" style="width:auto;">
+                            <label for="{{ item["id"] }}-0">A: <img src="{{ url_for('static', filename=item["optionA"]) }}" alt="" height="56"></label></li>
+                        <li><input id ="{{ item["id"] }}-1" class="auto-save"name="{{ item["id"] }}" type="radio" value="B" style="width:auto;">
+                            <label for="{{ item["id"] }}-1">B: <img src="{{ url_for('static', filename=item["optionB"]) }}" alt="" height="56"></label></li>
+                        <li><input id ="{{ item["id"] }}-2" class="auto-save"name="{{ item["id"] }}" type="radio" value="C" style="width:auto;">
+                            <label for="{{ item["id"] }}-2">C: <img src="{{ url_for('static', filename=item["optionC"]) }}" alt="" height="56"></label></li>
+                        <li><input id ="{{ item["id"] }}-3" class="auto-save"name="{{ item["id"] }}" type="radio" value="D" style="width:auto;">
+                            <label for="{{ item["id"] }}-3">D: <img src="{{ url_for('static', filename=item["optionD"]) }}" alt="" height="56"></label></li>
+                    </ul>
+                {% else %}
+                    <ul id="choices{{ item["id"] }}">
+                        <li><input id ="{{ item["id"] }}-0" class="auto-save"name="{{ item["id"] }}" type="radio" value="A" style="width:auto;">
+                            <label for="{{ item["id"] }}-0">A: {{ item["optionA"] }}</label></li>
+                        <li><input id ="{{ item["id"] }}-1" class="auto-save"name="{{ item["id"] }}" type="radio" value="B" style="width:auto;">
+                            <label for="{{ item["id"] }}-1">B: {{ item["optionB"] }}</label></li>
+                        <li><input id ="{{ item["id"] }}-2" class="auto-save"name="{{ item["id"] }}" type="radio" value="C" style="width:auto;">
+                            <label for="{{ item["id"] }}-2">C: {{ item["optionC"] }}</label></li>
+                        <li><input id ="{{ item["id"] }}-3" class="auto-save"name="{{ item["id"] }}" type="radio" value="D" style="width:auto;">
+                            <label for="{{ item["id"] }}-3">D: {{ item["optionD"] }}</label></li>
+                    </ul>
+                {% endif %}
+            {% endfor %}
+            {{ form.submit() }}
+
+        </form>
+        <script src="{{ url_for('static', filename='js/savy.min.js') }}" type="text/javascript"></script>
+        <script type="text/javascript">
+
+
+</script>
+        <button  onclick="save()">save/load</button>
+        <button  onclick="window.localStorage.clear();">clear</button>
+    {% endif %}
+{% endblock %}
+

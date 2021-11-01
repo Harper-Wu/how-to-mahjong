@@ -1,0 +1,294 @@
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.8;
+  font-size: 1em;
+  background: #fff;
+  overflow-x: hidden; }
+
+  .container {
+  margin: 0 auto;
+  max-width: 940px; 
+  padding: 0 10px;
+}
+
+.header {
+  background: url("bg.jpg") no-repeat center center; 
+  background-size: cover;
+  height: 400px;
+  text-align: center; 
+}
+
+.header .container {
+  position: relative;
+  top: 100px;
+}
+
+
+
+@media (min-width:850px) {
+  .header h1 {
+    font-size: 120px;
+  }
+}
+
+
+.nav { 
+  background: #000;
+  height: 80px; 
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.nav ul {
+  height: 80px;
+  list-style: none;
+  margin: 0 auto; 
+  padding: 0;
+}
+
+.nav ul li {
+  color: #fff;
+  display: inline-block; 
+  height: 80px;
+  line-height: 80px; 
+  list-style: none;
+  padding: 0 10px;
+  transition: background .5s; 
+}
+.nav ul li:last-child{
+  float:right;
+}
+
+.nav ul li:hover {
+  background: #117bff;
+  cursor: pointer; 
+  transition: background .5s;  
+}
+
+.main .container {
+  margin: 80px auto;
+}
+
+.main img {
+  margin: 80px 30px 30px 0;
+}
+
+.main img.right{
+	float: right;
+	margin: 80px 0 30px 30px;
+}
+.main img.left{
+  float: left;
+  margin: 80px 0 30px 30px;
+}
+
+
+.footer { 
+  background: #000;
+  height: 50px; 
+  padding-bottom: 25px;
+}
+
+
+.footer p { 
+  color: #fff;
+  font-size: 14px;  
+  height: 80px; 
+  line-height: 80px;
+  margin: 0;  
+}
+
+@media (max-width: 500px) {
+  .header h1 {
+    font-size: 50px;
+    line-height: 64px;
+  }
+
+
+  .main img {
+    width: 100%;
+  }
+}
+
+.header h1 {
+  background: black;
+  color: #fff;
+  line-height: 100px; 
+  font-size: 80px;
+  margin-top: 0;
+  margin-bottom: 80px;
+  text-transform: uppercase; 
+}
+
+
+.header p {
+  color: #fff;
+  background-color: black;
+  font-weight: 500;
+  letter-spacing: 8px;
+  margin-bottom: 40px;
+  margin-top: 0;
+  text-transform: uppercase; 
+}
+
+a{
+	color:#fff;
+  text-decoration: none; }
+}
+strong{
+	font-size:1.3em;
+}
+.btn{
+  background: black;
+}
+.btn:hover,.btn:focus{
+  background: #117bff;
+}
+}
+
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #117bff}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+
+
+#backtotop{z-index:999; 
+  display:inline-block; 
+  position:fixed; 
+  visibility:hidden; 
+  bottom:20px; 
+  right:20px; 
+  width:36px; 
+  height:36px; 
+  line-height:36px; 
+  font-size:16px; 
+  text-align:center; opacity:.2;
+}
+#backtotop i{display:block; width:100%; height:100%; line-height:inherit;}
+#backtotop.visible{visibility:visible; opacity:.5;}
+#backtotop:hover{opacity:1;}
+#backtotop{color:#04DEE0; background-color:#04DEE0;}
+.fa-arrow-up:before {
+  background-color: black;
+  }
+
+h1{
+   text-align: center
+}
+
+#submit{
+
+  /* remove default behavior */
+  appearance:none;
+  -webkit-appearance:none;
+
+  /* usual styles */
+  padding:10px;
+  border:none;
+  background-color:black;
+  color:#fff;
+  font-weight:600;
+  border-radius:5px;
+  width:15%;
+
+}
+#submit:hover{
+  background-color:#3F51B5;
+}
+
+form {
+  text-align: center;
+  border: 3px solid #f1f1f1;
+}
+form.quizs{
+  text-align: none;
+}
+form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px
+}
+input{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+
+  border-collapse: collapse;
+  
+}
+table.history{
+  width: 50%;
+
+}
+td.history, th.history {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr.history:nth-child(even){background: #EEEEEE;}
+
+
+tr.history:hover {background-color: #ddd;}
+
+th.history {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: black;
+  color: white;
+}

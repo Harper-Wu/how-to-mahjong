@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Welcome to the Mahjong Tutorial</h1>
+    <div class="main">
+
+    <div class="container">
+    	<h2>Please watch the following video to have basic understanding of what is Mahjong, what kinds of tiles are there and how they looks like</h2>
+      <iframe width="720" height="540" src="https://www.youtube.com/embed/tRCb_LOkEmQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      
+      
+      <h3>General rules & how to play</h3>
+      <p>There are different geographic variations of Mahjong (ie. American Mahjong, Taiwanese Mahjong, Japanese Mahjong, etc.) and equally as important, there are house rules. It is important at the beginning of the game to ensure all players are aware of the style, any house rules added, and if money will be involved and how much is the monetary value.
+
+In Hong Kong, the most common style is the Hong Kong Mahjong/Cantonese Mahjong which is the style in most of the Hong Kong Mahjong movies from the '90s. A great one to watch with English subtitles is called Fat Choi Spirit with Andy Lau, available on Netflix. Another style that has gained a lot of popularity in the last few decades is the Hong Kong Taiwanese style, which is what a lot of my aunties and locals play nowadays.</p>
+    </div>
+  </div>
+  <div class="main">
+    <div class="container">
+    	<img class ="right" src="{{ url_for('static', filename='images/Western_tiles_eg.jpg') }}"  >
+    	<h2>American Mahjong</h2>
+    	<p>American mahjong, also spelled mah jongg, is a variant of the Chinese game mahjong. American mahjong utilizes racks to hold each player's tiles, jokers, and "Hands and Rules" score cards. It has several distinct gameplay mechanics such as "The Charleston", which is a set of required passes, and optional passing of the tiles. American mahjong is played with four players using mah jongg tiles. The goal of the game is to be the first, by picking and discarding, to match one's tiles to a specific hand from the annually distributed scorecard published by the National Mah Jongg League (NMJL) and American Mah-Jongg Association (AMJA). Scoring is done by matching the points assigned to each pre-determined hand on the annually distributed NMJL card & AMJA card.</p>
+    	<p>The photo shows some of the tiles of American mahjong, Mahjong tiles with Latin letters and Arabic numerals added for an American audience</p>
+    	<h2>Tiles</h2>
+    	<p>The total number of mahjong tiles in the American mahjong is 152, as shown below.</p>
+    	<h3>Dots</h3>
+    	<p>From one dot to nine dots, four tiles of each type, 36 tiles in total.</p>
+    	<img class = "none"src="{{ url_for('static', filename='images/usadot.png') }}" style ="margin:0px">
+    	<p>For the convenience of American players, Arabic numbers are usually written on the tiles, stating how many dots it is.</p>
+    	<h3>Bamboos(bams)</h3>
+    	<p>From one bamboo to nine bamboos, four tiles of each type, 36 tiles in total.</p>
+    	<img class = "none"src="{{ url_for('static', filename='images/usabams.png') }}" style ="margin:0px">
+    	<p>The one bamboo also known as the bird.</p>
+    	<p>For the convenience of American players, Arabic numbers are usually written on the tiles, stating how many bamboos it is.</p>
+    	<h3>Characters (craks)</h3>
+    	<p>From one crak to nine craks, four tiles of each type, 36 tiles in total.</p>
+    	<img class = "none"src="{{ url_for('static', filename='images/usacraks.png') }}" style ="margin:0px">
+    	<p>For the convenience of American players, Arabic numbers are usually written on the tiles, stating how many craks it is.</p>
+    	<h3>Winds</h3>
+    	<p>The four types of winds are: East, South, West and North, four tiles of each type, 16 tiles in total.</p>
+    	<img class = "none"src="{{ url_for('static', filename='images/usawinds.png') }}" style ="margin:0px">
+    	<p>For the convenience of American players, letters "E" (for East East), "S" (for South South), "W" (for West West) and "N" (for North North) are usually written on the tiles, stating which wind it is.</p>
+    	<h3>Dragons</h3>
+    	<p>The three types of dragons are: Red dragon, Green dragon, and White dragon (also known as soap), four tiles of each type, 12 tiles in total. Among them, the red dragon is even used to replace the red "中", and the green dragon is even used to replace the green "發", avoiding the use of Chinese characters.</p>
+    	<img class = "none"src="{{ url_for('static', filename='images/usadragons.png') }}" style ="margin:0px">
+    	<p>For the convenience of American players, English words "Red", "Green" and "White" are usually written on the tiles, stating which dragon it is. Besides, some will say letter "C" (for "中" in Cantonese Romanisation), "F" (for "發" in Cantonese Romanisation), "P" or "B" (for "白" in Cantonese Romanisation).</p>
+    	<br>
+    	<p>Now, you are ready for the forllowing video and after that, your first Mahjong game. :D</p>
+    	<iframe width="560" height="315" src="https://www.youtube.com/embed/7l1Jf-E4CkA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    	<h2>Awesome Free Online Mahjong Game</h2>
+    	<embed src="https://www.arkadium.com/free-online-games/mahjong/" style="width:720px; height: 560px;">
+    </div>
+</div>
+{% endblock %}

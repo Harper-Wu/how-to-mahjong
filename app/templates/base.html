@@ -1,0 +1,107 @@
+<!-- Creating a layout template for all pages, 
+so other pages extended from this template 
+only need to fill in the body block content -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <script src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+        <!-- this is a icon js plugin
+        -->
+        <script src="https://kit.fontawesome.com/a41a6e1f6f.js" crossorigin="anonymous"></script>
+
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>How To Mahjong</title>
+        {% endif %}
+
+        <!-- script for flask_moment -->
+        {% block scripts %}
+        <!-- add super() here if use Flasks-Bootstrap base template -->
+        {{ moment.include_jquery() }}
+        {{ moment.include_moment() }}
+        {% endblock %}
+    </head>
+    <body>
+        <!-- <div>
+            How To Mahjong
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('index') }}">Tutorial</a>
+            <a href="{{ url_for('index') }}">quiz</a>
+            <a href="{{ url_for('index') }}">History</a>
+            <a href="{{ url_for('index') }}">Feedback</a> -->
+            <!-- Display Login or Logout depend on user status -->
+            <!-- {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}">Sign In</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}">Sign Out</a>
+            {% endif %}
+        </div> -->
+        <div class="header">
+            <div class="container">
+                <h1>How to Mahjong</h1>
+                <p>creating order out of chaos</p>
+                <!-- <a class="btn" href="{{ url_for('index') }}">login</a> -->
+                <!-- Display Login or Logout depend on user status -->
+                {% if current_user.is_anonymous %}
+                <a class="btn" href="{{ url_for('register') }}">Sign Up</a>
+                {% else %}
+                <a class="btn" >Welcome, {{current_user.username}}</a>
+                {% endif %}
+            </div>
+          </div>
+      
+           <div class="nav">
+               <div class="container">
+                  <ul>
+                    <li><a href="{{ url_for('index') }}">Intro</a></li>
+                    <li><a href="{{ url_for('tutorial') }}">Tutorial</a></li>
+                    {% if not current_user.is_anonymous %}
+                    <li><a href="{{ url_for('quiz') }}">Quiz</a></li>
+                    <li><a href="{{ url_for('history', username=current_user.username) }}">History</a></li>
+                    {% endif %}
+                    <li>
+                        <div class="dropdown">
+                             {% if current_user.is_anonymous %}
+                             <a class="btn" href="{{ url_for('login') }}">Sign In</a>
+                            {% else %}
+                            <a class="btn" href="{{ url_for('logout') }}">Sign Out</a>
+                            {% endif %}
+                        </div>
+                  </li>
+                  </ul>
+               </div>   
+        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %} 
+        {% endblock %}
+
+
+        <div class="footer">
+            <div class="container">
+              <p>&copy; 23052765 Harper Wu && 23067035 Ethan Chen</p>
+            </div>
+        </div>
+      
+        <a id="backtotop" href="#top"><i class="fas fa-arrow-up"></i></a>
+    </body>
+</html>
+        <!-- this is a localstorage plugin
+        -->
+<script src="{{ url_for('static', filename='js/savy.min.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    $('.auto-save').savy('destroy');
+</script>

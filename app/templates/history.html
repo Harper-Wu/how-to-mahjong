@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <table>
+        <tr valign="top">
+            <td><img src="{{ user.avatar(128) }}" alt="user avatar"></td>
+            <td>
+                <h1>Hi! {{ user.username }}</h1>
+                {% if  count == 1 %}
+                <p>You've done quiz {{ count }} time.</p>
+                {% else %}
+                <p>You've done quiz {{ count }} times.</p>
+                {% endif%}
+                <p>Your average score is {{ avgScore }}.</p>
+            </td>
+        </tr>
+    </table>
+    <hr>
+
+    <table class ="history">
+        <tr class ="history">
+            <th class ="history">Quiz Date</th>
+            <th class ="history">Score</th>
+            <th class ="history">Operation</th>
+        </tr>
+        {% for h in history %}
+        <tr class ="history">
+            <td class ="history">{{ moment(h.timestamp).format('MMMM Do YYYY, h:mm:ss a') }}</td>
+            
+            <td class ="history">{{ h.score }} </td>
+            <td class ="history">
+                <a href="{{ url_for('feedback', hid=h.id) }}" style="color:skyblue">Check Feedback</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% if prev_url %}
+    <a href="{{ prev_url }}" style="color:skyblue">Previous Page</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}" style="color:skyblue">Next Page</a>
+    {% endif %}
+{% endblock %}

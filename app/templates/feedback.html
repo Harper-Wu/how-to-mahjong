@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for feedback in feedbacks %}
+    {% if feedback[0] == '' %}
+        <p>{{ feedback[1] }}</p>
+    {% else %}
+        <p><b>Question{{ feedback[0] }}:</b> {{ feedback[1] }}</p>
+    {% endif %}
+    {% endfor %}
+{% endblock %}
